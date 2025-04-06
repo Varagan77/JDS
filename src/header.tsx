@@ -1,15 +1,20 @@
 import React from 'react';
-import './assets/App.css'
-import './assets/index.css';
+import './assets/App.css';
+import './assets/header.css';
+
 const Header: React.FC = () => {
   return (
-    <header>
-      <h1>JDS HEADER</h1>
-      <nav>
+    <header className="header">
+      <div className="logo-container">
+        <img src="/public/jds_logo.svg" alt="Logo" className="logo" />
+      </div>
+      <nav className="nav-links">
+        <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
     </header>
   );
