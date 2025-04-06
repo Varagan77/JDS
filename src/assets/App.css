@@ -11,7 +11,7 @@ THEME VARIABLES
   --color-light: #F2F2F2;
   --color-dark: #3f3e3e;
 
-  /* Light Mode Defaults */
+  /* Light Mode */
   --bg-color: var(--color-light);
   --text-color: var(--color-dark);
   --card-bg: white;
