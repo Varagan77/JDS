@@ -1,0 +1,12 @@
+
+/*
+##################################################################
+This file is typically where you define global styles that apply to the entire application. 
+These styles are not tied to a specific component and are intended to be global or default styles that you want throughout the whole app.
+##################################################################
+
+*/
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+}
