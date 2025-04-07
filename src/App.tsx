@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import './assets/App.css';
 import './assets/index.css';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import Header from './header';
+import Footer from './footer';
+import Logo from './logo';
+import Team from './team';
+import Service from './service';
+import Contact from './contact';
+import Theme from './theme';
+
+//images
+import image0 from './assets/image/P_1.png';
+import image1 from './assets/image/P_2.png';
+import image2 from './assets/image/P_3.png';
+import image3 from './assets/image/P_4.png';
+import image4 from './assets/image/P_1.png';
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -15,34 +30,61 @@ const App: React.FC = () => {
     if (storedMode === 'true') setDarkMode(true);
   }, []);
 
+  //background array
+  const sections = [
+    { offset: 0, image: image0, speed: 0.3 }, 
+    { offset: 1, image: image1, speed: 0.2 },  
+    { offset: 2, image: image2, speed: 0.1 },  
+    { offset: 3, image: image3, speed: 0.4 },  
+    { offset: 4, image: image4, speed: 0.5 },  
+  ];
+
   return (
-    <div className="app-container">
-      <div className="theme-toggle-container">
-        <label className="theme-switch">
-          <input type="checkbox" checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
-          <span className="slider"></span>
-        </label>
-      </div>
+    <Parallax pages={5} style={{ backgroundColor: 'var(--bg-color)' }}>
 
-      <h1>Welcome to JDS Technologies</h1>
+    {sections.map(({ offset, image, speed }) => (
+      <ParallaxLayer
+        key={offset}
+        offset={offset}
+        speed={speed} 
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          height: '140vh',  
+          zIndex: -1, 
+          opacity: 0.85,  
+            mixBlendMode: 'overlay', 
+        }}
+      />
+    ))}
 
-      <div className="services-container">
-        <div className="service">
-          <h2>Security</h2>
-          <p>Protect your digital assets with top-tier security technologies, ensuring your data is safe and secure.</p>
-        </div>
-        <div className="service">
-          <h2>Website Development</h2>
-          <p>Get a modern, responsive website built to engage users and grow your business with our development team.</p>
-        </div>
-        <div className="service">
-          <h2>Software Technologies</h2>
-          <p>Custom software development to streamline your operations and enhance productivity.</p>
-        </div>
-      </div>
+      <ParallaxLayer offset={0} speed={0.2}>
+        <Logo />
+      </ParallaxLayer>
 
-      <button className="contact-button">Get in Touch</button>
-    </div>
+      <ParallaxLayer offset={0} speed={0.5} className="center">
+        <Header />
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={1} speed={0.5} className="center">
+        <Team />
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={2} speed={0.5} className="center">
+        <Service />
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={3} speed={0.5} className="center">
+        <Contact />
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={4} speed={0.5} className="center">
+        <Footer />
+      </ParallaxLayer>
+
+      <Theme darkMode={darkMode} setDarkMode={setDarkMode} />
+    </Parallax>
   );
 };
 
