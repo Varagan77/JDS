@@ -9,13 +9,7 @@ import Team from './team';
 import Service from './service';
 import Contact from './contact';
 import Theme from './theme';
-
-//images
-import image0 from './assets/image/P_1.png';
-import image1 from './assets/image/P_2.png';
-import image2 from './assets/image/P_3.png';
-import image3 from './assets/image/P_4.png';
-import image4 from './assets/image/P_1.png';
+import Navbar from './navbar'
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -32,11 +26,11 @@ const App: React.FC = () => {
 
   //background array
   const sections = [
-    { offset: 0, image: image0, speed: 0.3 }, 
-    { offset: 1, image: image1, speed: 0.2 },  
-    { offset: 2, image: image2, speed: 0.1 },  
-    { offset: 3, image: image3, speed: 0.4 },  
-    { offset: 4, image: image4, speed: 0.5 },  
+    { offset: 0, image: 'https://i.redd.it/lxubnd28ojte1.png', speed: 0.3 },
+    { offset: 1, image: 'https://i.redd.it/z2ismiyz9vse1.jpeg', speed: 0.2 },
+    { offset: 2, image: 'https://i.redd.it/n2ebqg5qjkse1.png', speed: 0.1 },
+    { offset: 3, image: 'https://i.redd.it/hqr4gblfw0se1.png', speed: 0.4 },
+    { offset: 4, image: 'https://i.redd.it/ls1t1c76ufse1.jpeg', speed: 0.5 },
   ];
 
   return (
@@ -51,10 +45,11 @@ const App: React.FC = () => {
           backgroundImage: `url(${image})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          height: '140vh',  
+          height: '150vh',  
           zIndex: -1, 
-          opacity: 0.85,  
-            mixBlendMode: 'overlay', 
+          opacity: 1,  
+          mixBlendMode: 'overlay', 
+          filter: 'brightness(20%)',
         }}
       />
     ))}
@@ -67,6 +62,10 @@ const App: React.FC = () => {
         <Header />
       </ParallaxLayer>
 
+      <ParallaxLayer offset={0} speed={0.5} className="center">
+        <Navbar />
+      </ParallaxLayer>
+      
       <ParallaxLayer offset={1} speed={0.5} className="center">
         <Team />
       </ParallaxLayer>

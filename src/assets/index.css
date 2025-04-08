@@ -15,45 +15,48 @@ THEME VARIABLES
 ##################################################################
 */
 
+/* Light Theme */
 :root {
+  /* Base Colors */
   --color-primary: #F24405;
   --color-secondary: #F23005;
   --color-accent: #F20505;
   --color-light: #F2F2F2;
   --color-dark: #3f3e3e;
 
-  /* Light Mode */
+  /* Theme Colors */
   --bg-color: var(--color-light);
   --text-color: var(--color-dark);
   --card-bg: white;
   --button-bg: var(--color-primary);
   --button-hover: var(--color-secondary);
+  --heading-color: var(--color-primary);
+  --link-color: var(--color-primary);
 }
 
-:root {
-  --color-primary: #F24405;
-  --color-secondary: #F23005;
-  --color-accent: #F20505;
-  --color-light: #F2F2F2;
-  --color-dark: #3f3e3e;
 
-  /* Light Mode */
-  --bg-color: var(--color-light);
-  --text-color: var(--color-dark);
-  --card-bg: white;
-  --button-bg: var(--color-primary);
-  --button-hover: var(--color-secondary);
-  --heading-color: var(--color-primary); 
-}
+/*
+##################################################################
+DARK THEME VARIABLES
+##################################################################
+*/
 
 .dark-theme {
+  /* Backgrounds */
   --bg-color: #0D1B2A;
-  --text-color: #E0F7FA;
   --card-bg: #1B263B;
+
+  /* Text */
+  --text-color: #E0F7FA;
+  --heading-color: #48CAE4;
+  --link-color: #00B4D8;
+
+  /* Buttons */
   --button-bg: #00B4D8;
   --button-hover: #90E0EF;
-  --heading-color: #48CAE4;
 }
+
+
 /*
 ##################################################################
 BODY & ROOT STYLES
@@ -73,13 +76,13 @@ body {
   text-align: center;
 }
 
+
 /*
 ##################################################################
 TEXT STYLES
 ##################################################################
 */
 
-/* Base text styles */
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
@@ -98,9 +101,35 @@ p {
   line-height: 1.5;
 }
 
-
 h1, h2 {
   color: var(--heading-color);
+}
+
+
+/*
+##################################################################
+LIST STYLES
+##################################################################
+*/
+
+ul {
+  list-style-type: none;
+  margin-top: 300px !important;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+
+li a {
+  display: block;
+  color: var(--link-color);
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: var(--color-accent);
+  color: white;
 }
 
 
