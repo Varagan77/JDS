@@ -1,11 +1,96 @@
 /*
 ##################################################################
-component-specific styles. 
-If your App component (or any other component) 
-has unique styles that only apply to that particular component or section, they go in App.css.
+APP LAYOUT
 ##################################################################
-
 */
-#root {
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+/*
+##################################################################
+SERVICES SECTION
+##################################################################
+*/
+
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.service {
+  background-color: var(--card-bg);
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.service h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/*
+##################################################################
+BUTTONS
+##################################################################
+*/
+
+.contact-button {
+  background-color: var(--button-bg);
+  color: var(--color-light);
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: var(--button-hover);
+}
+
+/*
+##################################################################
+CENTERING HELPER CLASS
+##################################################################
+*/
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+##################################################################
+HEADER & LOGO
+##################################################################
+*/
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
 }

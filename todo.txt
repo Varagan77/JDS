@@ -1,0 +1,4 @@
+#navbar
+#contacts - email, phone number, names
+#forms - emailjs, 
+#meet the team - sg op graphics
