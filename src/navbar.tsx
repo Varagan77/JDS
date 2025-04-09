@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header: React.FC = () => {
+const Navbar: React.FC = () => {
   return (
     <ul>
   <li><a href="default.asp">Home</a></li>
@@ -11,4 +11,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default Navbar;
